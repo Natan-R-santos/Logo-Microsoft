@@ -1,2 +1,76 @@
 # Logo-Microsoft
 Recriação do logo da microsoft como estudos treinando HTML,CSS e JAVASCRIPT 
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Logo-Microsoft</title>
+  <style>.square.Orange{
+    background-color: #F25022;
+    width: 200px;
+    height: 200px;
+}
+.square.Green{
+    background-color: #7FBA00;
+    width: 200px;
+    height: 200px;
+}
+.square.Blue{
+    background-color:#00A4EF;
+    width: 200px;
+    height: 200px;
+}
+.square.Yellow{
+    background-color:#FFB900;
+    height: 200px;
+    width: 200px;
+}
+.content {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.color {
+    gap: 8px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+body {
+    overflow: hidden;
+}
+</style>
+</head>
+<body>
+  <div class="content">
+    <div class="color">
+      <div class="square Orange"></div>
+      <div class="square Green"></div>
+      <div class="square Blue"></div>
+      <div class="square Yellow"></div>
+
+    </div>
+  </div>
+  
+</body>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const btn = document.getElementById("btn");
+  if (btn) {
+    btn.addEventListener("click", () => {
+      alert("Feito por Natan");
+    });
+  }
+
+  const squares = document.querySelectorAll(".square");
+  squares.forEach(square => {
+    square.addEventListener("click", () => {
+      
+      const cor = square.classList[1] || "sem cor definida";
+      alert(`Você clicou na cor: ${cor}`);
+    });
+  });
+});
+</script>
+</html>
